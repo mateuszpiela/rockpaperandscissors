@@ -34,6 +34,7 @@ jobs:
         uses: actions/download-artifact@v3.0.0
         with:
           name: Package
+          path: artifact-from-build-stage
       - name: Get maven version
         id: get-version
         uses: JActions/maven-version@v1.0.1
