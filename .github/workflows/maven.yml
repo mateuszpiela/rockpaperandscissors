@@ -3,8 +3,6 @@ name: Maven (Kotlin/Java build)
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   build:
@@ -46,6 +44,6 @@ jobs:
         with:
           draft: false
           prerelease: false
-          files: artifact-from-build-stage/*
+          files: artifact-from-build-stage/*.jar
           name: ${{ steps.get-version.outputs.version }}
           tag_name: ${{ steps.get-version.outputs.version }}
