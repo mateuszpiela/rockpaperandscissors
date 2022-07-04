@@ -35,13 +35,6 @@ jobs:
         with:
           name: Package
       - name: Get maven version
-        uses: Deep-Symmetry/github-version-action@v1.1
-        with:
-          tag-var-name: release_tag
-      - name: GitHub Release Action
-        uses: 1fxe/GitHub-Release-Action@main
-        with:
-          release_token: ${{ secrets.RELEASE_TOKEN }}
-          release_tag: "$release_tag"
-          release_title: "$release_tag"
-          release_file: Package
+        id: get-version
+        uses: JActions/maven-version@v1.0.1
+      - run: ls -a
